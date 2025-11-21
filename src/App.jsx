@@ -1,71 +1,69 @@
+import Hero from './components/Hero'
+import FeatureCard from './components/FeatureCard'
+import FAQ from './components/FAQ'
+import FinalCTA from './components/FinalCTA'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-slate-50">
+      {/* Decorative background */}
+      <div className="pointer-events-none fixed inset-0 -z-[1] bg-[radial-gradient(60%_40%_at_50%_-10%,rgba(59,130,246,0.15),transparent_60%)]" />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
+      {/* Hero with Spline cover */}
+      <Hero />
 
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
+      {/* Content sections */}
+      <main className="relative z-10 max-w-5xl mx-auto px-6 py-10">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+          <FeatureCard
+            title="How FUNdamentals Works"
+            items={[
+              '8-week, high-energy session focused on progressive skill introduction.',
+              'Athletes try a rotation of <strong>ninja, gymnastics, and tumbling</strong> fundamentals.',
+              'Designed specifically for ages <strong>5–12</strong> (Beginner to Intermediate levels).',
+              'Perfect for beginners and current athletes who want extra time in the gym.'
+            ]}
+          />
+          <FeatureCard
+            title="Sessions Offered All Year"
+            items={[
+              '<strong>Winter New Year Session:</strong> January – February',
+              '<strong>Spring Session:</strong> April – May',
+              '<strong>Summer Session:</strong> July – August',
+              '<strong>Fall Session:</strong> October – November'
+            ]}
+          />
+        </section>
 
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+          <FeatureCard
+            title="Is This Right for My Child?"
+            items={[
+              'They have lots of energy, love to move, and need an outlet.',
+              'They want to try <strong>ninja, gymnastics, and tumbling</strong> before committing to one class.',
+              'They’re already in a class and want a fun skills boost in complementary disciplines.',
+              'Parents are looking for a <b>low-commitment</b> way to test multiple sports.'
+            ]}
+          />
+          <FeatureCard
+            title="What to Expect Each Week"
+            items={[
+              'Coach-led warm-up with a clear weekly focus (Ninja, Gymnastics, or Tumbling rotation).',
+              'High-rep, station-based training so kids stay moving and fully engaged.',
+              'Positive coaching that builds confidence and celebrates effort and progress.',
+              'A clear pathway recommendation for next steps after the 8-week program.'
+            ]}
+          />
+        </section>
 
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
+        {/* Interactive FAQ */}
+        <FAQ />
 
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
+        {/* Final CTA */}
+        <div className="mt-10">
+          <FinalCTA />
         </div>
-      </div>
+      </main>
     </div>
   )
 }
